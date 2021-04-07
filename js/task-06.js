@@ -10,12 +10,15 @@ validationInputRef.addEventListener('blur', addRemoveClassOnInput)
 function addRemoveClassOnInput() {
 const inputValueLength = validationInputRef.value.length;
     //   console.log(inputValueLength);
-       
     if (inputValueLength === dataLength) {
-        validationInputRef.classList.add('valid')
-        validationInputRef.classList.remove('invalid')
-    } else {
-        validationInputRef.classList.remove('valid')
-        validationInputRef.classList.add('invalid')
+   changeClass('valid', 'invalid')
     }
-}
+    else {
+    changeClass('invalid', 'valid')
+    };
+};
+
+const changeClass = (add, remove) => {
+    validationInputRef.classList.add(add);
+    validationInputRef.classList.remove(remove);
+ };
